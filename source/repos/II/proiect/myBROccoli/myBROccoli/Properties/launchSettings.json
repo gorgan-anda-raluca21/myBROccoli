@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "myBROccoli (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "myBROccoli (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
