@@ -1,6 +1,9 @@
 .vs/
+<<<<<<< HEAD
 [Bb]in/
 [Oo]bj/
 *.user
 *.suo
 *.cache
+=======
+>>>>>>> 07a724930d59896cb8da2b39de1b4f02f8640ef6
