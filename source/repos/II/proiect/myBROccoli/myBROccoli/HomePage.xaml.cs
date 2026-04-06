@@ -60,7 +60,7 @@ namespace myBROccoli
                 }
             }
 
-            return "You're doing great. Keep showing up for yourself every day!";
+            return "You're doing great.. Keep showing up for yourself every day!";
         }
 
         private void Card_PointerEntered(object sender, PointerRoutedEventArgs e)
