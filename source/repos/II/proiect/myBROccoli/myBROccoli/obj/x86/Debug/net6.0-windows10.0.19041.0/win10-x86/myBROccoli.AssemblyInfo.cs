@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("myBROccoli")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+13b91f9448b7c7e6b21b55cba2647431f6ef6dd1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f7ecce430b95b2da50ed1feb8d3b660bfc966c7")]
 [assembly: System.Reflection.AssemblyProductAttribute("myBROccoli")]
 [assembly: System.Reflection.AssemblyTitleAttribute("myBROccoli")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mihal\\source\\repos\\II\\proiect\\myBROccoli\\myBROccoli\\myBROccoli.csproj": {}
+    "C:\\Users\\armin\\source\\repos\\myBROccoli\\source\\repos\\II\\proiect\\myBROccoli\\myBROccoli\\myBROccoli.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mihal\\source\\repos\\II\\proiect\\myBROccoli\\myBROccoli\\myBROccoli.csproj": {
+    "C:\\Users\\armin\\source\\repos\\myBROccoli\\source\\repos\\II\\proiect\\myBROccoli\\myBROccoli\\myBROccoli.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mihal\\source\\repos\\II\\proiect\\myBROccoli\\myBROccoli\\myBROccoli.csproj",
+        "projectUniqueName": "C:\\Users\\armin\\source\\repos\\myBROccoli\\source\\repos\\II\\proiect\\myBROccoli\\myBROccoli\\myBROccoli.csproj",
         "projectName": "myBROccoli",
-        "projectPath": "C:\\Users\\mihal\\source\\repos\\II\\proiect\\myBROccoli\\myBROccoli\\myBROccoli.csproj",
-        "packagesPath": "C:\\Users\\mihal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mihal\\source\\repos\\II\\proiect\\myBROccoli\\myBROccoli\\obj\\",
+        "projectPath": "C:\\Users\\armin\\source\\repos\\myBROccoli\\source\\repos\\II\\proiect\\myBROccoli\\myBROccoli\\myBROccoli.csproj",
+        "packagesPath": "C:\\Users\\armin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\armin\\source\\repos\\myBROccoli\\source\\repos\\II\\proiect\\myBROccoli\\myBROccoli\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\visual studio\\shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\mihal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\armin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,7 +44,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net6.0-windows10.0.19041": {
@@ -71,79 +73,55 @@
           "warn": true,
           "downloadDependencies": [
             {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.28, 6.0.28]"
-            },
-            {
               "name": "Microsoft.AspNetCore.App.Runtime.win-arm64",
-              "version": "[6.0.28, 6.0.28]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[6.0.28, 6.0.28]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
-              "version": "[6.0.28, 6.0.28]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-arm64",
-              "version": "[6.0.28, 6.0.28]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.28, 6.0.28]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x86",
-              "version": "[6.0.28, 6.0.28]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.28, 6.0.28]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.win-arm64",
-              "version": "[6.0.28, 6.0.28]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[6.0.28, 6.0.28]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.win-x86",
-              "version": "[6.0.28, 6.0.28]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.Windows.SDK.NET.Ref",
-              "version": "[10.0.19041.31, 10.0.19041.31]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.28, 6.0.28]"
+              "version": "[10.0.19041.55, 10.0.19041.55]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-arm64",
-              "version": "[6.0.28, 6.0.28]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[6.0.28, 6.0.28]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
-              "version": "[6.0.28, 6.0.28]"
+              "version": "[6.0.36, 6.0.36]"
             }
           ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             },
-            "Microsoft.Windows.SDK.NET.Ref": {
+            "Microsoft.Windows.SDK.NET.Ref.Windows": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
