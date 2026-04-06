@@ -17,65 +17,122 @@
 
     <Page.Resources>
         <Storyboard x:Name="IntroStoryboard">
-            <DoubleAnimation Storyboard.TargetName="HeroSection"
+            <DoubleAnimation Storyboard.TargetName="MainContent"
                              Storyboard.TargetProperty="Opacity"
-                             From="0" To="1" Duration="0:0:0.6"/>
+                             From="0" To="1" Duration="0:0:0.7"/>
 
-            <DoubleAnimation Storyboard.TargetName="HeroTranslate"
-                             Storyboard.TargetProperty="Y"
-                             From="30" To="0" Duration="0:0:0.6"/>
-
-            <DoubleAnimation Storyboard.TargetName="StreakCard"
-                             Storyboard.TargetProperty="Opacity"
-                             From="0" To="1" Duration="0:0:0.8"/>
-
-            <DoubleAnimation Storyboard.TargetName="StreakTranslate"
-                             Storyboard.TargetProperty="Y"
-                             From="35" To="0" Duration="0:0:0.8"/>
-
-            <DoubleAnimation Storyboard.TargetName="CardWeightLoss"
-                             Storyboard.TargetProperty="Opacity"
-                             From="0" To="1" Duration="0:0:1.0"/>
-
-            <DoubleAnimation Storyboard.TargetName="CardWeightLossTranslate"
-                             Storyboard.TargetProperty="Y"
-                             From="40" To="0" Duration="0:0:1.0"/>
-
-            <DoubleAnimation Storyboard.TargetName="CardMuscleGain"
-                             Storyboard.TargetProperty="Opacity"
-                             From="0" To="1" Duration="0:0:1.1"/>
-
-            <DoubleAnimation Storyboard.TargetName="CardMuscleGainTranslate"
-                             Storyboard.TargetProperty="Y"
-                             From="40" To="0" Duration="0:0:1.1"/>
-
-            <DoubleAnimation Storyboard.TargetName="CardBulking"
-                             Storyboard.TargetProperty="Opacity"
-                             From="0" To="1" Duration="0:0:1.2"/>
-
-            <DoubleAnimation Storyboard.TargetName="CardBulkingTranslate"
-                             Storyboard.TargetProperty="Y"
-                             From="45" To="0" Duration="0:0:1.2"/>
+            <DoubleAnimation Storyboard.TargetName="MainContentTranslate"
+                             Storyboard.TargetProperty="X"
+                             From="30" To="0" Duration="0:0:0.7"/>
         </Storyboard>
     </Page.Resources>
 
-    <Grid>
-        <Grid.Background>
-            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Color="#F8FBF6" Offset="0.0"/>
-                <GradientStop Color="#EEF7E8" Offset="0.45"/>
-                <GradientStop Color="#E3F0DD" Offset="1.0"/>
-            </LinearGradientBrush>
-        </Grid.Background>
+    <Grid Background="#F6FAF3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-        <Canvas IsHitTestVisible="False" Opacity="0.22">
-            <Ellipse Width="280" Height="280" Fill="#DDEFD3" Canvas.Left="-80" Canvas.Top="120"/>
-            <Ellipse Width="180" Height="180" Fill="#EAF6E3" Canvas.Left="980" Canvas.Top="40"/>
-            <Ellipse Width="220" Height="220" Fill="#E2F1DA" Canvas.Left="1080" Canvas.Top="720"/>
-        </Canvas>
+        <!-- SIDEBAR -->
+        <Border Grid.Column="0"
+                Background="#1F3A28"
+                CornerRadius="0,28,28,0">
+            <Grid Padding="24">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <Grid Padding="36">
+                <StackPanel Orientation="Horizontal" Spacing="12">
+                    <Border Width="52"
+                            Height="52"
+                            CornerRadius="16"
+                            Background="#2C5A38">
+                        <Image Source="ms-appx:///Assets/broccoli_logo.png"
+                               Width="30"
+                               Height="30"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                    </Border>
+
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="myBROccoli"
+                                   FontSize="24"
+                                   FontWeight="Bold"
+                                   Foreground="White"/>
+                        <TextBlock Text="nutrition dashboard"
+                                   FontSize="12"
+                                   Foreground="#CFE3D2"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1"
+                            Margin="0,40,0,0"
+                            Spacing="14">
+                    <Border Background="#2D5E3C"
+                            CornerRadius="18"
+                            Padding="14">
+                        <TextBlock Text="🏠 Home"
+                                   FontSize="16"
+                                   FontWeight="SemiBold"
+                                   Foreground="White"/>
+                    </Border>
+
+                    <Border Background="#274C33"
+                            CornerRadius="18"
+                            Padding="14">
+                        <TextBlock Text="🔥 Weight Loss"
+                                   FontSize="16"
+                                   Foreground="#DDEBDD"/>
+                    </Border>
+
+                    <Border Background="#274C33"
+                            CornerRadius="18"
+                            Padding="14">
+                        <TextBlock Text="💪 Muscle Gain"
+                                   FontSize="16"
+                                   Foreground="#DDEBDD"/>
+                    </Border>
+
+                    <Border Background="#274C33"
+                            CornerRadius="18"
+                            Padding="14">
+                        <TextBlock Text="🍽️ Bulking"
+                                   FontSize="16"
+                                   Foreground="#DDEBDD"/>
+                    </Border>
+
+                    <Border Background="#274C33"
+                            CornerRadius="18"
+                            Padding="14">
+                        <TextBlock Text="📈 Streak Tracker"
+                                   FontSize="16"
+                                   Foreground="#DDEBDD"/>
+                    </Border>
+                </StackPanel>
+
+                <Button Grid.Row="2"
+                        Content="Logout"
+                        Height="44"
+                        CornerRadius="18"
+                        Background="#DDEFD3"
+                        Foreground="#1F3A28"
+                        FontWeight="Bold"
+                        Click="Logout_Click"/>
+            </Grid>
+        </Border>
+
+        <!-- MAIN CONTENT -->
+        <ScrollViewer Grid.Column="1"
+                      VerticalScrollBarVisibility="Auto">
+            <Grid x:Name="MainContent"
+                  Padding="32"
+                  Opacity="0">
+                <Grid.RenderTransform>
+                    <TranslateTransform x:Name="MainContentTranslate" X="30"/>
+                </Grid.RenderTransform>
+
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -83,173 +140,154 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <Grid Grid.Row="0" Margin="0,0,0,28">
+                <!-- TOP BAR -->
+                <Grid Grid.Row="0"
+                      Margin="0,0,0,24">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <StackPanel Orientation="Horizontal" Spacing="12">
-                        <Border Width="58"
-                                Height="58"
-                                CornerRadius="20"
-                                Background="#DDF0D4"
-                                BorderBrush="#CBE5BF"
-                                BorderThickness="1">
-                            <Image Source="ms-appx:///Assets/broccoli_logo.png"
-                                   Width="36"
-                                   Height="36"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"/>
-                        </Border>
-
-                        <StackPanel VerticalAlignment="Center">
-                            <TextBlock Text="myBROccoli"
-                                       FontSize="31"
-                                       FontWeight="Bold"
-                                       Foreground="#183518"/>
-                            <TextBlock Text="Meal inspiration built around your goal"
-                                       FontSize="13"
-                                       Foreground="#6B7280"/>
-                        </StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="Welcome back, Bro! 👋"
+                                   FontSize="32"
+                                   FontWeight="Bold"
+                                   Foreground="#183518"/>
+                        <TextBlock Text="Your healthy meal planner, tailored to your goal."
+                                   FontSize="15"
+                                   Foreground="#667085"
+                                   Margin="0,6,0,0"/>
                     </StackPanel>
 
-                    <Button Grid.Column="1"
-                            Content="Logout"
-                            Width="120"
-                            Height="42"
-                            CornerRadius="18"
-                            Background="#2F6B2F"
-                            Foreground="White"
-                            FontWeight="SemiBold"
-                            VerticalAlignment="Center"
-                            Click="Logout_Click"/>
+                    <Border Grid.Column="1"
+                            Background="White"
+                            BorderBrush="#E2E8E0"
+                            BorderThickness="1"
+                            CornerRadius="22"
+                            Padding="14,10"
+                            VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <Ellipse Width="14" Height="14" Fill="#67C56F"/>
+                            <TextBlock Text="Frontend Demo Active"
+                                       FontWeight="SemiBold"
+                                       Foreground="#2F6B2F"/>
+                        </StackPanel>
+                    </Border>
                 </Grid>
 
-                <Border x:Name="HeroSection"
-                        Grid.Row="1"
-                        CornerRadius="34"
-                        Padding="34"
-                        Margin="0,0,0,28"
-                        BorderBrush="#D9E5D2"
-                        BorderThickness="1"
-                        Background="#FFFFFF"
-                        Opacity="0">
-                    <Border.RenderTransform>
-                        <TranslateTransform x:Name="HeroTranslate" Y="30"/>
-                    </Border.RenderTransform>
-
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="300"/>
-                        </Grid.ColumnDefinitions>
-
-                        <StackPanel Spacing="16" MaxWidth="720">
-                            <Border Background="#E7F5DF"
-                                    CornerRadius="16"
-                                    Padding="12,6"
-                                    HorizontalAlignment="Left">
-                                <TextBlock Text="Healthy eating • personalized goals • consistency"
-                                           FontSize="12"
-                                           FontWeight="SemiBold"
-                                           Foreground="#2F6B2F"/>
-                            </Border>
-
-                            <TextBlock Text="A smarter way to discover meals for Weight Loss, Muscle Gain and Bulking."
-                                       FontSize="34"
-                                       FontWeight="Bold"
-                                       TextWrapping="Wrap"
-                                       Foreground="#183518"/>
-
-                            <TextBlock Text="myBROccoli helps users discover healthy meal ideas based on their personal fitness objective. Instead of random recipes, the app offers structured meal inspiration for people who want to lose weight, build muscle, or go through a bulking phase."
-                                       FontSize="15"
-                                       TextWrapping="Wrap"
-                                       Foreground="#4B5563"/>
-
-                            <StackPanel Orientation="Horizontal" Spacing="12">
-                                <Border Background="#F2F8EE" CornerRadius="18" Padding="14,8">
-                                    <TextBlock Text="Weight Loss" FontWeight="SemiBold" Foreground="#234A1F"/>
-                                </Border>
-                                <Border Background="#F2F8EE" CornerRadius="18" Padding="14,8">
-                                    <TextBlock Text="Muscle Gain" FontWeight="SemiBold" Foreground="#234A1F"/>
-                                </Border>
-                                <Border Background="#F2F8EE" CornerRadius="18" Padding="14,8">
-                                    <TextBlock Text="Bulking" FontWeight="SemiBold" Foreground="#234A1F"/>
-                                </Border>
-                            </StackPanel>
-                        </StackPanel>
-
-                        <Grid Grid.Column="1"
-                              HorizontalAlignment="Right"
-                              VerticalAlignment="Center">
-                            <Ellipse Width="220"
-                                     Height="220"
-                                     Fill="#DFF0D5"/>
-                            <Ellipse Width="175"
-                                     Height="175"
-                                     Fill="#FFFFFF"
-                                     Stroke="#D7E8CF"
-                                     StrokeThickness="2"
-                                     HorizontalAlignment="Center"
-                                     VerticalAlignment="Center"/>
-                            <Image Source="ms-appx:///Assets/broccoli_logo.png"
-                                   Width="96"
-                                   Height="96"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"/>
-                        </Grid>
-                    </Grid>
-                </Border>
-
-                <Grid Grid.Row="2" Margin="0,0,0,22">
+                <!-- HERO + STREAK -->
+                <Grid Grid.Row="1"
+                      ColumnSpacing="22"
+                      Margin="0,0,0,24">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1.35*"/>
-                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2.1*"/>
+                        <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Border x:Name="StreakCard"
-                            Grid.Column="0"
-                            CornerRadius="30"
-                            Padding="26"
-                            Margin="0,0,22,0"
-                            Background="White"
-                            BorderBrush="#DDE6D8"
-                            BorderThickness="1"
-                            Opacity="0">
-                        <Border.RenderTransform>
-                            <TranslateTransform x:Name="StreakTranslate" Y="35"/>
-                        </Border.RenderTransform>
+                    <!-- HERO -->
+                    <Border Grid.Column="0"
+                            CornerRadius="32"
+                            Padding="30"
+                            BorderBrush="#E3EAE0"
+                            BorderThickness="1">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#FFFFFF" Offset="0.0"/>
+                                <GradientStop Color="#EEF8E8" Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
 
                         <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="220"/>
+                            </Grid.ColumnDefinitions>
 
-                            <StackPanel Grid.Row="0" Spacing="6">
-                                <TextBlock Text="Daily Streak"
-                                           FontSize="22"
+                            <StackPanel Spacing="16"
+                                        MaxWidth="620">
+                                <Border Background="#E8F6E1"
+                                        CornerRadius="18"
+                                        Padding="12,6"
+                                        HorizontalAlignment="Left">
+                                    <TextBlock Text="Smart meals • daily consistency • better habits"
+                                               FontWeight="SemiBold"
+                                               FontSize="12"
+                                               Foreground="#2F6B2F"/>
+                                </Border>
+
+                                <TextBlock Text="Healthy meal ideas for Weight Loss, Muscle Gain and Bulking."
+                                           FontSize="34"
                                            FontWeight="Bold"
+                                           TextWrapping="Wrap"
                                            Foreground="#183518"/>
-                                <TextBlock Text="Track the days you stayed aligned with your goal."
-                                           FontSize="13"
-                                           Foreground="#6B7280"
-                                           TextWrapping="Wrap"/>
+
+                                <TextBlock Text="myBROccoli helps users discover nutrition ideas based on their objective. The app is designed to make healthy eating feel structured, motivating and easier to follow."
+                                           FontSize="15"
+                                           TextWrapping="Wrap"
+                                           Foreground="#4B5563"/>
+
+                                <StackPanel Orientation="Horizontal" Spacing="12">
+                                    <Border Background="#F3F8EF"
+                                            CornerRadius="18"
+                                            Padding="14,8">
+                                        <TextBlock Text="Weight Loss"
+                                                   Foreground="#234A1F"
+                                                   FontWeight="SemiBold"/>
+                                    </Border>
+
+                                    <Border Background="#F3F8EF"
+                                            CornerRadius="18"
+                                            Padding="14,8">
+                                        <TextBlock Text="Muscle Gain"
+                                                   Foreground="#234A1F"
+                                                   FontWeight="SemiBold"/>
+                                    </Border>
+
+                                    <Border Background="#F3F8EF"
+                                            CornerRadius="18"
+                                            Padding="14,8">
+                                        <TextBlock Text="Bulking"
+                                                   Foreground="#234A1F"
+                                                   FontWeight="SemiBold"/>
+                                    </Border>
+                                </StackPanel>
                             </StackPanel>
 
-                            <Grid Grid.Row="1" HorizontalAlignment="Center" Margin="0,18,0,18">
-                                <Ellipse Width="165" Height="165" Fill="#F4FAEF"/>
-                                <Ellipse Width="150" Height="150"
-                                         Fill="#EDF7E8"
-                                         Stroke="#B9D5AE"
+                            <Grid Grid.Column="1"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center">
+                                <Ellipse Width="180"
+                                         Height="180"
+                                         Fill="#DDF0D4"/>
+                                <Ellipse Width="140"
+                                         Height="140"
+                                         Fill="White"/>
+                                <Image Source="ms-appx:///Assets/broccoli_logo.png"
+                                       Width="82"
+                                       Height="82"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                            </Grid>
+                        </Grid>
+                    </Border>
+
+                    <!-- STREAK -->
+                    <Border Grid.Column="1"
+                            CornerRadius="32"
+                            Padding="24"
+                            Background="#1F3A28">
+                        <StackPanel Spacing="16">
+                            <TextBlock Text="Daily Streak"
+                                       FontSize="22"
+                                       FontWeight="Bold"
+                                       Foreground="White"/>
+
+                            <Grid HorizontalAlignment="Center">
+                                <Ellipse Width="150"
+                                         Height="150"
+                                         Fill="#2D5E3C"
+                                         Stroke="#6FBF73"
                                          StrokeThickness="8"/>
-                                <Ellipse Width="118" Height="118"
-                                         Fill="White"
-                                         Stroke="#DDEBD5"
-                                         StrokeThickness="2"/>
 
                                 <StackPanel HorizontalAlignment="Center"
                                             VerticalAlignment="Center"
@@ -259,57 +297,57 @@
                                                FontSize="40"
                                                FontWeight="Bold"
                                                HorizontalAlignment="Center"
-                                               Foreground="#234A1F"/>
+                                               Foreground="White"/>
                                     <TextBlock Text="days"
                                                FontSize="14"
                                                HorizontalAlignment="Center"
-                                               Foreground="#6B7280"/>
+                                               Foreground="#D5E7D7"/>
                                 </StackPanel>
                             </Grid>
 
                             <ComboBox x:Name="GoalComboBox"
-                                      Grid.Row="2"
-                                      Header="Choose today's goal"
+                                      Header="Today's goal"
                                       SelectedIndex="0">
                                 <ComboBoxItem Content="Weight Loss"/>
                                 <ComboBoxItem Content="Muscle Gain"/>
                                 <ComboBoxItem Content="Bulking"/>
                             </ComboBox>
 
-                            <StackPanel Grid.Row="3" Spacing="12" Margin="0,14,0,0">
-                                <CheckBox x:Name="DailyCheckBox"
-                                          Content="Today I stayed on track"
-                                          Checked="DailyCheckBox_Checked"
-                                          Unchecked="DailyCheckBox_Unchecked"/>
+                            <CheckBox x:Name="DailyCheckBox"
+                                      Content="I stayed on track today"
+                                      Foreground="White"
+                                      Checked="DailyCheckBox_Checked"
+                                      Unchecked="DailyCheckBox_Unchecked"/>
 
-                                <Border Background="#F3FAEE"
-                                        CornerRadius="18"
-                                        Padding="14">
-                                    <TextBlock x:Name="MotivationTextBlock"
-                                               Text="Check today's progress to build your streak."
-                                               TextWrapping="Wrap"
-                                               FontSize="13"
-                                               Foreground="#4B5563"/>
-                                </Border>
-                            </StackPanel>
-                        </Grid>
+                            <Border Background="#2C5A38"
+                                    CornerRadius="18"
+                                    Padding="14">
+                                <TextBlock x:Name="MotivationTextBlock"
+                                           Text="Check today's progress to build your streak."
+                                           TextWrapping="Wrap"
+                                           FontSize="13"
+                                           Foreground="#E6F2E7"/>
+                            </Border>
+                        </StackPanel>
                     </Border>
-
-                    <StackPanel Grid.Column="1"
-                                VerticalAlignment="Center"
-                                Spacing="10">
-                        <TextBlock Text="Explore the nutrition paths"
-                                   FontSize="28"
-                                   FontWeight="Bold"
-                                   Foreground="#1E3A1E"/>
-                        <TextBlock Text="Each section is built around a specific goal and a different style of meal planning. Hover over the cards, keep your streak alive, and make the page feel interactive and alive."
-                                   FontSize="14"
-                                   TextWrapping="Wrap"
-                                   Foreground="#6B7280"/>
-                    </StackPanel>
                 </Grid>
 
-                <Grid Grid.Row="3" ColumnSpacing="22" RowSpacing="22">
+                <!-- GOAL SECTION TITLE -->
+                <StackPanel Grid.Row="2"
+                            Margin="0,0,0,18">
+                    <TextBlock Text="Choose your nutrition path"
+                               FontSize="26"
+                               FontWeight="Bold"
+                               Foreground="#183518"/>
+                    <TextBlock Text="Each card opens a dedicated section with a different focus."
+                               FontSize="14"
+                               Foreground="#667085"/>
+                </StackPanel>
+
+                <!-- GOAL CARDS + QUOTE -->
+                <Grid Grid.Row="3"
+                      ColumnSpacing="22"
+                      RowSpacing="22">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
@@ -317,221 +355,166 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
+                    <!-- WEIGHT LOSS -->
                     <Border x:Name="CardWeightLoss"
                             Grid.Row="0"
                             Grid.Column="0"
                             CornerRadius="30"
                             Padding="24"
+                            Background="White"
                             BorderBrush="#DDE6D8"
                             BorderThickness="1.5"
-                            Background="White"
-                            Opacity="0"
                             PointerEntered="Card_PointerEntered"
-                            PointerExited="Card_PointerExited">
+                            PointerExited="Card_PointerExited"
+                            Tapped="WeightLossCard_Tapped">
                         <Border.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform x:Name="CardWeightLossScale" ScaleX="1" ScaleY="1"/>
-                                <TranslateTransform x:Name="CardWeightLossTranslate" Y="40"/>
-                            </TransformGroup>
+                            <ScaleTransform x:Name="CardWeightLossScale"
+                                            ScaleX="1"
+                                            ScaleY="1"/>
                         </Border.RenderTransform>
                         <Border.RenderTransformOrigin>0.5,0.5</Border.RenderTransformOrigin>
 
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-
-                            <Rectangle Height="5"
-                                       RadiusX="3"
-                                       RadiusY="3"
-                                       Fill="#7BC96F"
-                                       HorizontalAlignment="Stretch"
-                                       VerticalAlignment="Top"/>
-
-                            <StackPanel Grid.Row="1" Margin="0,16,0,0" Spacing="14">
-                                <TextBlock Text="01"
-                                           FontSize="12"
-                                           FontWeight="Bold"
-                                           Foreground="#7C8B75"/>
-
-                                <TextBlock Text="🔥 Weight Loss"
+                        <StackPanel Spacing="14">
+                            <Border Width="52"
+                                    Height="52"
+                                    CornerRadius="16"
+                                    Background="#ECF8E7">
+                                <TextBlock Text="🔥"
                                            FontSize="24"
-                                           FontWeight="Bold"
-                                           Foreground="#183518"/>
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                            </Border>
 
-                                <TextBlock Text="Balanced meal ideas that support a calorie deficit without making healthy eating feel boring or restrictive."
-                                           TextWrapping="Wrap"
-                                           FontSize="14"
-                                           Foreground="#4B5563"/>
+                            <TextBlock Text="Weight Loss"
+                                       FontSize="24"
+                                       FontWeight="Bold"
+                                       Foreground="#183518"/>
 
-                                <StackPanel Spacing="7">
-                                    <TextBlock Text="• high-protein breakfasts" Foreground="#6B7280"/>
-                                    <TextBlock Text="• low-calorie lunch options" Foreground="#6B7280"/>
-                                    <TextBlock Text="• lighter dinners with volume foods" Foreground="#6B7280"/>
-                                </StackPanel>
+                            <TextBlock Text="Balanced, lighter meal ideas that support fat loss without feeling restrictive."
+                                       TextWrapping="Wrap"
+                                       FontSize="14"
+                                       Foreground="#4B5563"/>
 
-                                <Border Background="#EDF7E8"
-                                        CornerRadius="18"
-                                        Padding="12,8"
-                                        HorizontalAlignment="Left">
-                                    <TextBlock Text="Clean, light, goal-focused"
-                                               FontSize="12"
-                                               FontWeight="SemiBold"
-                                               Foreground="#2F6B2F"/>
-                                </Border>
-                            </StackPanel>
-                        </Grid>
+                            <TextBlock Text="Explore section →"
+                                       FontWeight="SemiBold"
+                                       Foreground="#2F6B2F"/>
+                        </StackPanel>
                     </Border>
 
+                    <!-- MUSCLE GAIN -->
                     <Border x:Name="CardMuscleGain"
                             Grid.Row="0"
                             Grid.Column="1"
                             CornerRadius="30"
                             Padding="24"
+                            Background="White"
                             BorderBrush="#DDE6D8"
                             BorderThickness="1.5"
-                            Background="White"
-                            Opacity="0"
                             PointerEntered="Card_PointerEntered"
-                            PointerExited="Card_PointerExited">
+                            PointerExited="Card_PointerExited"
+                            Tapped="MuscleGainCard_Tapped">
                         <Border.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform x:Name="CardMuscleGainScale" ScaleX="1" ScaleY="1"/>
-                                <TranslateTransform x:Name="CardMuscleGainTranslate" Y="40"/>
-                            </TransformGroup>
+                            <ScaleTransform x:Name="CardMuscleGainScale"
+                                            ScaleX="1"
+                                            ScaleY="1"/>
                         </Border.RenderTransform>
                         <Border.RenderTransformOrigin>0.5,0.5</Border.RenderTransformOrigin>
 
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-
-                            <Rectangle Height="5"
-                                       RadiusX="3"
-                                       RadiusY="3"
-                                       Fill="#5FAE5A"
-                                       HorizontalAlignment="Stretch"
-                                       VerticalAlignment="Top"/>
-
-                            <StackPanel Grid.Row="1" Margin="0,16,0,0" Spacing="14">
-                                <TextBlock Text="02"
-                                           FontSize="12"
-                                           FontWeight="Bold"
-                                           Foreground="#7C8B75"/>
-
-                                <TextBlock Text="💪 Muscle Gain"
+                        <StackPanel Spacing="14">
+                            <Border Width="52"
+                                    Height="52"
+                                    CornerRadius="16"
+                                    Background="#ECF8E7">
+                                <TextBlock Text="💪"
                                            FontSize="24"
-                                           FontWeight="Bold"
-                                           Foreground="#183518"/>
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                            </Border>
 
-                                <TextBlock Text="Meals centered around protein, recovery and nutrient timing for users who want to build lean muscle mass."
-                                           TextWrapping="Wrap"
-                                           FontSize="14"
-                                           Foreground="#4B5563"/>
+                            <TextBlock Text="Muscle Gain"
+                                       FontSize="24"
+                                       FontWeight="Bold"
+                                       Foreground="#183518"/>
 
-                                <StackPanel Spacing="7">
-                                    <TextBlock Text="• protein-rich breakfast ideas" Foreground="#6B7280"/>
-                                    <TextBlock Text="• post-workout nutrition" Foreground="#6B7280"/>
-                                    <TextBlock Text="• macro-friendly main meals" Foreground="#6B7280"/>
-                                </StackPanel>
+                            <TextBlock Text="Protein-focused ideas and structured nutrition for strength and muscle building."
+                                       TextWrapping="Wrap"
+                                       FontSize="14"
+                                       Foreground="#4B5563"/>
 
-                                <Border Background="#EDF7E8"
-                                        CornerRadius="18"
-                                        Padding="12,8"
-                                        HorizontalAlignment="Left">
-                                    <TextBlock Text="Strong, balanced, consistent"
-                                               FontSize="12"
-                                               FontWeight="SemiBold"
-                                               Foreground="#2F6B2F"/>
-                                </Border>
-                            </StackPanel>
-                        </Grid>
+                            <TextBlock Text="Explore section →"
+                                       FontWeight="SemiBold"
+                                       Foreground="#2F6B2F"/>
+                        </StackPanel>
                     </Border>
 
+                    <!-- BULKING -->
                     <Border x:Name="CardBulking"
-                            Grid.Row="1"
-                            Grid.ColumnSpan="2"
+                            Grid.Row="0"
+                            Grid.Column="2"
                             CornerRadius="30"
-                            Padding="28"
+                            Padding="24"
+                            Background="White"
                             BorderBrush="#DDE6D8"
                             BorderThickness="1.5"
-                            Background="White"
-                            Opacity="0"
                             PointerEntered="Card_PointerEntered"
-                            PointerExited="Card_PointerExited">
+                            PointerExited="Card_PointerExited"
+                            Tapped="BulkingCard_Tapped">
                         <Border.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform x:Name="CardBulkingScale" ScaleX="1" ScaleY="1"/>
-                                <TranslateTransform x:Name="CardBulkingTranslate" Y="45"/>
-                            </TransformGroup>
+                            <ScaleTransform x:Name="CardBulkingScale"
+                                            ScaleX="1"
+                                            ScaleY="1"/>
                         </Border.RenderTransform>
                         <Border.RenderTransformOrigin>0.5,0.5</Border.RenderTransformOrigin>
 
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
+                        <StackPanel Spacing="14">
+                            <Border Width="52"
+                                    Height="52"
+                                    CornerRadius="16"
+                                    Background="#ECF8E7">
+                                <TextBlock Text="🍽️"
+                                           FontSize="24"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                            </Border>
 
-                            <Rectangle Height="5"
-                                       RadiusX="3"
-                                       RadiusY="3"
-                                       Fill="#3F8F45"
-                                       HorizontalAlignment="Stretch"
-                                       VerticalAlignment="Top"/>
+                            <TextBlock Text="Bulking"
+                                       FontSize="24"
+                                       FontWeight="Bold"
+                                       Foreground="#183518"/>
 
-                            <Grid Grid.Row="1" Margin="0,18,0,0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="260"/>
-                                </Grid.ColumnDefinitions>
+                            <TextBlock Text="Higher-calorie healthy ideas for surplus phases and sustainable growth."
+                                       TextWrapping="Wrap"
+                                       FontSize="14"
+                                       Foreground="#4B5563"/>
 
-                                <StackPanel Spacing="14" MaxWidth="760">
-                                    <TextBlock Text="03"
-                                               FontSize="12"
-                                               FontWeight="Bold"
-                                               Foreground="#7C8B75"/>
+                            <TextBlock Text="Explore section →"
+                                       FontWeight="SemiBold"
+                                       Foreground="#2F6B2F"/>
+                        </StackPanel>
+                    </Border>
 
-                                    <TextBlock Text="🍽️ Bulking"
-                                               FontSize="24"
-                                               FontWeight="Bold"
-                                               Foreground="#183518"/>
-
-                                    <TextBlock Text="A section dedicated to nutrient-dense, higher-calorie meals for users who want to stay in a surplus and grow with structure."
-                                               TextWrapping="Wrap"
-                                               FontSize="14"
-                                               Foreground="#4B5563"/>
-
-                                    <StackPanel Spacing="7">
-                                        <TextBlock Text="• calorie-dense healthy plates" Foreground="#6B7280"/>
-                                        <TextBlock Text="• snack ideas for extra intake" Foreground="#6B7280"/>
-                                        <TextBlock Text="• meal combinations for surplus phases" Foreground="#6B7280"/>
-                                    </StackPanel>
-                                </StackPanel>
-
-                                <Border Grid.Column="1"
-                                        Background="#F3FAEE"
-                                        CornerRadius="24"
-                                        Padding="20"
-                                        Margin="22,0,0,0">
-                                    <StackPanel Spacing="10" VerticalAlignment="Center">
-                                        <TextBlock Text="Why it matters"
-                                                   FontSize="16"
-                                                   FontWeight="Bold"
-                                                   Foreground="#234A1F"/>
-                                        <TextBlock Text="The app shows that healthy eating can be adapted to different goals — not just one generic diet style."
-                                                   TextWrapping="Wrap"
-                                                   FontSize="13"
-                                                   Foreground="#4B5563"/>
-                                    </StackPanel>
-                                </Border>
-                            </Grid>
-                        </Grid>
+                    <!-- QUOTE CARD -->
+                    <Border Grid.Row="1"
+                            Grid.ColumnSpan="3"
+                            CornerRadius="28"
+                            Padding="24"
+                            Background="#EEF8E8"
+                            BorderBrush="#DAE8D4"
+                            BorderThickness="1">
+                        <StackPanel Spacing="10">
+                            <TextBlock Text="Quote of the day"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Foreground="#183518"/>
+                            <TextBlock Text="“Small healthy choices, repeated daily, create the biggest transformations.”"
+                                       FontSize="16"
+                                       FontStyle="Italic"
+                                       TextWrapping="Wrap"
+                                       Foreground="#4B5563"/>
+                        </StackPanel>
                     </Border>
                 </Grid>
             </Grid>
