@@ -1,1 +1,1 @@
-C:\Users\mihal\source\repos\II\proiect\myBROccoli\myBROccoli\myBROccoli.csproj;x86
+C:\Users\Stefan\Source\Repos\myBROccoli\source\repos\II\proiect\myBROccoli\myBROccoli\myBROccoli.csproj;x86
