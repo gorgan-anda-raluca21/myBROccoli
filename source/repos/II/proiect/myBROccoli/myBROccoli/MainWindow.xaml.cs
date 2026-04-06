@@ -19,7 +19,7 @@ namespace myBROccoli
           
             if (email == "bro@healthy.com" && password == "broccoli123")
             {
-                LoginButton.Content = "Success!";
+                LoginButton.Content = "Success!!";
             }
             else
             {
