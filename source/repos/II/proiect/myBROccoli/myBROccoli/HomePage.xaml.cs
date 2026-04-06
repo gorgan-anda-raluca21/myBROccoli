@@ -54,7 +54,11 @@ namespace myBROccoli
                     case "Weight Loss":
                         return "Amazing job! Every healthy choice brings you closer to your weight loss goal.";
                     case "Muscle Gain":
-                        return "Great work!! Consistency in nutrition is what helps build real strength.";
+<<<<<<< HEAD
+                        return "Great work! Consistency in nutrition builds real strength.";
+=======
+                        return "Great work!!!!! Consistency in nutrition is what helps build real strength.";
+>>>>>>> 3705b625fc15efd77c937de33dd7c6d89288a6a6
                     case "Bulking":
                         return "Well done! Smart eating and consistency make every bulking day count.";
                 }
@@ -63,30 +67,37 @@ namespace myBROccoli
             return "You're doing great. Keep showing up for yourself every day!";
         }
 
+        private void WeightLossCard_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(WeightLossPage));
+        }
+
+        private void MuscleGainCard_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MuscleGainPage));
+        }
+
+        private void BulkingCard_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(BulkingPage));
+        }
+
         private void Card_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
-            if (sender is Border border && border.RenderTransform is TransformGroup group)
+            if (sender is Border border && border.RenderTransform is ScaleTransform scale)
             {
-                if (group.Children[0] is ScaleTransform scale)
-                {
-                    scale.ScaleX = 1.03;
-                    scale.ScaleY = 1.03;
-                }
-
-                border.BorderBrush = new SolidColorBrush(Microsoft.UI.ColorHelper.FromArgb(255, 152, 198, 140));
+                scale.ScaleX = 1.04;
+                scale.ScaleY = 1.04;
+                border.BorderBrush = new SolidColorBrush(Microsoft.UI.ColorHelper.FromArgb(255, 126, 185, 117));
             }
         }
 
         private void Card_PointerExited(object sender, PointerRoutedEventArgs e)
         {
-            if (sender is Border border && border.RenderTransform is TransformGroup group)
+            if (sender is Border border && border.RenderTransform is ScaleTransform scale)
             {
-                if (group.Children[0] is ScaleTransform scale)
-                {
-                    scale.ScaleX = 1.0;
-                    scale.ScaleY = 1.0;
-                }
-
+                scale.ScaleX = 1.0;
+                scale.ScaleY = 1.0;
                 border.BorderBrush = new SolidColorBrush(Microsoft.UI.ColorHelper.FromArgb(255, 221, 230, 216));
             }
         }
