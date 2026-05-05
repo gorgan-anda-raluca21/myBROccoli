@@ -54,11 +54,9 @@ namespace myBROccoli
                     case "Weight Loss":
                         return "Amazing job! Every healthy choice brings you closer to your weight loss goal.";
                     case "Muscle Gain":
-<<<<<<< HEAD
                         return "Great work! Consistency in nutrition builds real strength.";
-=======
                         return "Great work!!!!! Consistency in nutrition is what helps build real strength.";
->>>>>>> 3705b625fc15efd77c937de33dd7c6d89288a6a6
+
                     case "Bulking":
                         return "Well done! Smart eating and consistency make every bulking day count.";
                 }
